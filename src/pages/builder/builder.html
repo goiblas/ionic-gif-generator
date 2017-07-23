@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>builder</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <video width="300" height="300" [src]="videoUrl" loop muted  style="display:none;"></video>
+
+  <canvas id="c-main" height="300" width="300"></canvas>
+  <img [src]="src" id="gif" alt="" style="display:none;">
+
+  <ion-item>
+
+    <ion-input type="email" placeholder="Texto en el gif" [(ngModel)]="canvasOptions.text"></ion-input>
+  </ion-item>
+
+<ion-scroll scrollX="true" class="wrapperEffect">
+
+  <div class="rowEffect">
+      <div *ngFor="let filter of availableFilters" class="boxEffect" (click)="applyEffect(filter)">
+          <canvas height="120" width="120" [id]="filter"></canvas>
+          {{filter}}
+      </div>
+  </div>
+</ion-scroll>
+<div *ngIf="isCordova;then mobileButtons; else desktopButtons"></div>
+<ng-template #mobileButtons>
+  <button ion-button (click)="share()">Compartir</button>
+  <button ion-button (click)="save()">Guardar</button>
+</ng-template>
+<ng-template #desktopButtons>
+  <button ion-button (click)="generatorGif()">Descargar gif</button>
+</ng-template>
+</ion-content>

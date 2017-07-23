@@ -1,0 +1,19 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>screenCapturer</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<video [src]="webcamUrl" id="videoWebCam" width="300" height="300"></video>
+
+
+<button ion-button (click)="getVideo()"> Lanzar webcam</button>
+<button ion-button (click)="recVideo()"> grabar video </button>
+
+</ion-content>

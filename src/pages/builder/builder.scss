@@ -1,0 +1,20 @@
+page-builder {
+
+}
+
+.boxEffect {
+    width: 120px;
+    height: 140px;
+    line-height: 20px;
+    text-align: center;
+    margin-right: 6px;
+    flex: 1 0 120px;
+}
+
+.rowEffect {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.wrapperEffect {
+    height: 155px;
+}
